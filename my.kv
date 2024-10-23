@@ -1,0 +1,857 @@
+MainWindow:
+    FirstWindow:
+    SecondWindow:
+    ThirdWindow:
+    FourthWindow:
+    FifthWindow:
+    SixthWindow:
+    SeventhWindow:
+    EighthWindow:
+    NinthWindow:
+<FirstWindow>:
+    name:"First"
+    Label:
+        markup:True
+        text:"Athithya[sup][size=15]R[/size][/sup]"
+        font_size:50
+        bold:True
+        italic:True
+        color:(1,1,1,0.7)
+    RoundedButton:
+        text:"PRESS"
+        size_hint:(0.3,0.1)
+        pos_hint:{'center_x':0.5,'center_y':0.2}
+        on_press:
+            app.root.current="Second"
+            root.manager.transition.direction="left"
+<RoundedButton@Button>
+    background_color:(0,0,0,0)
+    background_normal:''
+    canvas.before:
+        Color:
+            rgba:(1/255.0,60/255.0,60/255.0,1)
+        RoundedRectangle:
+            size:self.size
+            pos:self.pos
+            radius:[40]
+<SecondWindow>
+    name:"Second"
+    Label:
+        text:"NAME:"
+        bold:True
+        color:(1,1,1,1)
+        font_size:20
+        pos_hint:{'center_x':0.25,'center_y':0.6}
+    Label:
+        text:"SUPPLIER ID:"
+        bold:True
+        color:(1,1,1,1)
+        font_size:20
+        pos_hint:{'center_x':0.28,'center_y':0.5}
+    TextInput:
+        id:counter_no
+        multiline:False
+        size_hint:(0.4,0.05)
+        pos_hint:{'center_x':0.65,'center_y':0.4}
+    Label:
+        text:"TABLE NO:"
+        bold:True
+        color:(1,1,1,1)
+        font_size:20
+        pos_hint:{'center_x':0.3,'center_y':0.4}
+    TextInput:
+        multiline:False
+        size_hint:(0.4,0.05)
+        pos_hint:{'center_x':0.65,'center_y':0.5}
+    TextInput:
+        id:waiter_name
+        multiline:False
+        size_hint:(0.4,0.05)
+        pos_hint:{'center_x':0.65,'center_y':0.6}
+    RoundedButton:
+        text:"New Order"
+        size_hint:(0.3,0.1)
+        pos_hint:{'center_x':0.3,'center_y':0.2}
+        on_press:
+            app.root.current="Third"
+            root.manager.transition.direction="left"
+        on_press:root.counter()
+    RoundedButton:
+        text:"Orders"
+        size_hint:(0.3,0.1)
+        pos_hint:{'center_x':0.8,'center_y':0.2}
+        on_press:
+            app.root.current="ninth"
+            root.manager.transition.direction="left"
+
+<ThirdWindow>
+    name:"Third"
+    BoxLayout:
+        orientation:"vertical"
+        spacing:30
+        padding:30
+        size:root.width,root.height
+        RoundedButtonn:
+            text:"INDIAN"
+            color:(1/255.0,40/255.0,40/255.0,1)
+            bold:True
+            italic:True
+            font_size:20
+
+            on_press:
+                app.root.current="Fourth"
+                root.manager.transition.direction="left"
+        RoundedButtonn:
+            text:"CHINESE"
+            color:(1/255.0,40/255.0,40/255.0,1)
+            bold:True
+            italic:True
+            font_size:20
+            on_press:
+                app.root.current="Fifth"
+                root.manager.transition.direction="left"
+        RoundedButtonn:
+            text:"MEXICAN"
+            color:(1/255.0,40/255.0,40/255.0,1)
+            bold:True
+            italic:True
+            font_size:20
+            on_press:
+                app.root.current="Sixth"
+                root.manager.transition.direction="left"
+        RoundedButtonn:
+            text:"ITALIAN"
+            color:(1/255.0,40/255.0,40/255.0,1)
+            bold:True
+            italic:True
+            font_size:20
+            on_press:
+                app.root.current="Seven"
+                root.manager.transition.direction="left"
+        RoundedButtonnn:
+            text:"BACK"
+            color:(1,1,1,1)
+            bold:True
+            italic:True
+            font_size:20
+            size_hint:(0.4,0.3)
+            pos_hint:{'center_x':0.5,'center_y':0.1}
+            on_press:
+                app.root.current="Second"
+                root.manager.transition.direction="left"
+<RoundedButtonn@Button>
+    background_color:(0,0,0,0)
+    background_normal:''
+    canvas.before:
+        Color:
+            rgba:(1,1,1,0.8)
+        RoundedRectangle:
+            size:self.size
+            pos:self.pos
+            radius:[40]
+<RoundedButtonnn@Button>
+    background_color:(0,0,0,0)
+    background_normal:''
+    canvas.before:
+        Color:
+            rgba:(1/255.0,40/255.0,40/255.0,1)
+        RoundedRectangle:
+            size:self.size
+            pos:self.pos
+            radius:[40]
+<TextInput1@TextInput>
+    size_hint:(0.1,0.1)
+<FourthWindow>
+    name:"Fourth"
+    Button:
+        text:"BACK"
+        bold:True
+        background_normal:''
+        background_color:(1,1,1,0.8)
+        size_hint:(0.15,0.05)
+        pos_hint:{'center_x':0.2,'center_y':0.95}
+        color:(1/255.0,40/255.0,40/255.0,1)
+        on_press:
+            app.root.current="Third"
+            root.manager.transition.direction="right"
+
+    Label:
+        markup:True
+        text:"[u]INDIAN[/u]"
+        bold:True
+        italic:True
+        font_size:25
+        pos_hint:{'center_x':0.5,'center_y':0.95}
+
+    Button:
+        text:"ORDER"
+        bold:True
+        background_normal:''
+        background_color:(1,1,1,0.8)
+        color:(1/255.0,40/255.0,40/255.0,1)
+        size_hint:(0.15,0.05)
+        pos_hint:{'center_x':0.8,'center_y':0.95}
+        on_press:root.place_order()
+        on_press:
+            app.root.current="Eighth"
+            root.manager.transition.direction="left"
+
+    Label:
+        markup:True
+        text:"[u]IMAGE[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.11,'center_y':0.88}
+    Label:
+        markup:True
+        text:"[u]NAME[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.31,'center_y':0.88}
+    Label:
+        markup:True
+        text:"[u]PRICE[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.51,'center_y':0.88}
+    Label:
+        markup:True
+        text:"[u]CHECK[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.69,'center_y':0.88}
+    Label:
+        markup:True
+        text:"[u]QUANTITY[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.89,'center_y':0.88}
+        GridLayout:
+            cols:5
+            size:root.width,root.height-80
+            col_force_default:True
+            col_default_width:78
+
+
+            Image:
+                source:'pictures/Idli.jpg'
+
+            Label:
+                text:"Idli"
+            Label:
+                id:idli_price
+                text:"50"
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"Idli","50")
+            TextInput1:
+                id:textbox1_text
+                multiline:False
+                on_text:root.texta()
+
+
+
+            Image:
+                source:'pictures/Puri.jpg'
+
+            Label:
+                text:"Puri"
+                pos_hint:{'center_x':0.3,'center_y':0.52}
+            Label:
+                id:puri_price
+                text:"40"
+
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"Puri","40")
+
+
+            TextInput:
+                id:textbox2_text
+                multiline:False
+                on_text:root.textb()
+
+
+            Image:
+                source:'pictures/Upma.jpg'
+
+            Label:
+                text:"Upma"
+
+            Label:
+                id:upma_price
+                text:"60"
+
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"Upma","60")
+
+            TextInput:
+                multiline:False
+                id:textbox3
+                on_text:root.textc()
+
+            Image:
+                source:'pictures/Parotta.jpg'
+
+            Label:
+                text:"Parotta"
+
+            Label:
+                id:parotta_price
+                text:"65"
+
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"Parotta","65")
+
+            TextInput:
+                multiline:False
+                id:textbox4
+                on_text:root.textd()
+
+
+
+
+
+
+
+
+
+
+
+<FifthWindow>
+    name:"Fifth"
+    Label:
+        text:"CHINESE"
+        bold:True
+        italic:True
+        font_size:25
+        pos_hint:{'center_x':0.5,'center_y':0.95}
+    Label:
+        markup:True
+        text:"[u]IMAGE[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.11,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]NAME[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.31,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]PRICE[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.51,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]CHECK[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.69,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]QUANTITY[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.89,'center_y':0.9}
+    Button:
+        text:"ORDER"
+        size_hint:(0.2,0.06)
+        pos_hint:{'center_x':0.88,'center_y':0.95}
+        bold:True
+        background_normal:''
+        background_color:(1,1,1,0.8)
+        color:(1/255.0,40/255.0,40/255.0,1)
+        on_press:
+            app.root.current="Eighth"
+            root.manager.transition.direction="left"
+        on_press:root.place_order()
+    Button:
+        text:"BACK"
+        size_hint:(0.2,0.06)
+        pos_hint:{'center_x':0.1,'center_y':0.95}
+        bold:True
+        background_normal:''
+        background_color:(1,1,1,0.8)
+        color:(1/255.0,40/255.0,40/255.0,1)
+        on_press:
+            app.root.current="Third"
+            root.manager.transition.direction="right"
+        GridLayout:
+            cols:5
+            size:root.width,root.height-70
+            col_force_default:True
+            col_default_width:78
+            Image:
+                source:'pictures/Doughnut Stick.jpg'
+            Label:
+                text:"Dougnut"
+            Label:
+                id:doughnut_price
+                text:"50"
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"Dougnut","50")
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+                id:textbox1_text
+                on_text:root.texta()
+            Image:
+                source:'pictures/Congee.jpg'
+            Label:
+                text:"Congee"
+            Label:
+                id:congee_price
+                text:"40"
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"Congee","40")
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+                id:textbox2_text
+                on_text:root.textb()
+            Image:
+                source:'pictures/Steamed Bao Bun.jpg'
+            Label:
+                text:"Bao Bun"
+            Label:
+                text:"60"
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"BaoBun","60")
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+                id:textbox3
+                on_text:root.textc()
+            Image:
+                source:'pictures/Jian Bing.jpg'
+            Label:
+                text:"Jian Bing"
+            Label:
+                text:"65"
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"JiBing","65")
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+                id:textbox4
+                on_text:root.textd()
+
+<SixthWindow>
+    name:"Sixth"
+    Label:
+        text:"MEXICAN"
+        bold:True
+        italic:True
+        font_size:25
+        pos_hint:{'center_x':0.5,'center_y':0.95}
+    Label:
+        markup:True
+        text:"[u]IMAGE[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.11,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]NAME[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.31,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]PRICE[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.51,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]CHECK[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.69,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]QUANTITY[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.89,'center_y':0.9}
+    Button:
+        text:"ORDER"
+        size_hint:(0.2,0.06)
+        pos_hint:{'center_x':0.88,'center_y':0.95}
+        bold:True
+        background_normal:''
+        background_color:(1,1,1,0.8)
+        color:(1/255.0,40/255.0,40/255.0,1)
+        on_press:
+            app.root.current="Eighth"
+            root.manager.transition.direction="left"
+        on_press:root.place_order()
+    Button:
+        text:"BACK"
+        size_hint:(0.2,0.06)
+        pos_hint:{'center_x':0.1,'center_y':0.95}
+        bold:True
+        background_normal:''
+        background_color:(1,1,1,0.8)
+        color:(1/255.0,40/255.0,40/255.0,1)
+        on_press:
+            app.root.current="Third"
+            root.manager.transition.direction="right"
+        GridLayout:
+            cols:5
+            size:root.width,root.height-70
+            col_force_default:True
+            col_default_width:78
+            Image:
+                source:'pictures/Huevos rancheros.jpg'
+            Label:
+                text:"Rancheros"
+            Label:
+                text:"50"
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"Rancheo","50")
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+                id:textbox1_text
+                on_text:root.texta()
+            Image:
+                source:'pictures/Enchiladas enmoladas.jpg'
+            Label:
+                text:" Enchiladas"
+            Label:
+                text:"40"
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"Enchila","40")
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+                id:textbox2_text
+                on_text:root.textb()
+            Image:
+                source:'pictures/Tamales.jpg'
+            Label:
+                text:"Tamales"
+            Label:
+                text:"60"
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"Tamales","60")
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+                id:textbox3
+                on_text:root.textc()
+            Image:
+                source:'pictures/Molletes.jpg'
+            Label:
+                text:"Molletes"
+            Label:
+                text:"65"
+            CheckBox:
+                on_active:root.checkbox_checka(self,self.active,"Mollete","65")
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+                id:textbox4
+                on_text:root.textd()
+
+<SeventhWindow>
+    name:"Seven"
+    Label:
+        text:"ITALIAN"
+        bold:True
+        italic:True
+        font_size:25
+        pos_hint:{'center_x':0.5,'center_y':0.95}
+    Label:
+        markup:True
+        text:"[u]IMAGE[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.11,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]NAME[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.31,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]PRICE[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.51,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]CHECK[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.69,'center_y':0.9}
+    Label:
+        markup:True
+        text:"[u]QUANTITY[/u]"
+        bold:True
+        italic:True
+        font_size:15
+        pos_hint:{'center_x':0.89,'center_y':0.9}
+    Button:
+        text:"ORDER"
+        size_hint:(0.2,0.06)
+        pos_hint:{'center_x':0.88,'center_y':0.95}
+        bold:True
+        background_normal:''
+        background_color:(1,1,1,0.8)
+        color:(1/255.0,40/255.0,40/255.0,1)
+        on_press:root.place_order()
+    Button:
+        text:"BACK"
+        size_hint:(0.2,0.06)
+        pos_hint:{'center_x':0.1,'center_y':0.95}
+        bold:True
+        background_normal:''
+        background_color:(1,1,1,0.8)
+        color:(1/255.0,40/255.0,40/255.0,1)
+        on_press:
+            app.root.current="Third"
+            root.manager.transition.direction="right"
+        GridLayout:
+            cols:5
+            size:root.width,root.height-70
+            col_force_default:True
+            col_default_width:78
+            Image:
+                source:'pictures/Frittata.jpg'
+            Label:
+                text:"Frittata"
+            Label:
+                text:"50"
+            CheckBox:
+                on_active:root.checkbox_check(self,self.active)
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+            Image:
+                source:'pictures/Baked Eggs.jpg'
+            Label:
+                text:"Baked Eggs"
+            Label:
+                text:"40"
+            CheckBox:
+                on_active:root.checkbox_check(self,self.active)
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+            Image:
+                source:'pictures/Ricotta Pancakes.jpg'
+            Label:
+                text:"Ricotta"
+            Label:
+                text:"60"
+            CheckBox:
+                on_active:root.checkbox_check(self,self.active)
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+            Image:
+                source:'pictures/Croissant.jpg'
+            Label:
+                text:"Croissant"
+            Label:
+                text:"65"
+            CheckBox:
+                on_active:root.checkbox_check(self,self.active)
+            TextInput:
+                multiline:False
+                size_hint:(0.2,0.1)
+
+<EighthWindow>
+
+    name:"Eighth"
+    Button:
+        text:"BACK"
+        bold:True
+        background_normal:''
+        background_color:(1,1,1,0.8)
+        size_hint:(0.15,0.05)
+        pos_hint:{'center_x':0.2,'center_y':0.95}
+        color:(1/255.0,40/255.0,40/255.0,1)
+        on_press:
+            app.root.current="Third"
+            root.manager.transition.direction="right"
+    Label:
+        markup:True
+        text:"[b][u]ORDER PLACED[/u][/b]"
+        font_size:25
+        pos_hint:{'center_x':0.5,'center_y':0.85}
+        italic:True
+    RoundedButtonn:
+        text:"VIEW ORDER"
+        color:(1/255.0,40/255.0,40/255.0,1)
+        bold:True
+        italic:True
+        font_size:20
+        on_press:root.view_order()
+        pos_hint:{'center_x':0.5,'center_y':0.7}
+        size_hint:(0.4,0.2)
+    Label:
+        id:display
+        text:""
+        pos_hint:{'center_x':0.4,'center_y':0.15}
+        bold:True
+        font_size:10
+    Label:
+        text:"ORDER DETAILS:"
+        pos_hint:{'center_x':0.5,'center_y':0.5}
+        bold:True
+        font_size:17
+    Label:
+        text:"ORDER_ID:"
+        pos_hint:{'center_x':0.12,'center_y':0.45}
+        bold:True
+        font_size:15
+    Label:
+        text:""
+        id:orderid_label
+        pos_hint:{'center_x':0.32,'center_y':0.45}
+
+
+
+    Label:
+        text:"DATE:"
+        pos_hint:{'center_x':0.1,'center_y':0.4}
+        bold:True
+        font_size:15
+    Label:
+        text:""
+        id:date_label
+        pos_hint:{'center_x':0.48,'center_y':0.4}
+    Label:
+        text:"COUNTER:"
+        pos_hint:{'center_x':0.13,'center_y':0.35}
+        bold:True
+        font_size:15
+    Label:
+        text:""
+        id:counterno_label
+        pos_hint:{'center_x':0.32,'center_y':0.35}
+
+    Label:
+        text:"ITEMS:"
+        pos_hint:{'center_x':0.1,'center_y':0.3}
+        bold:True
+        font_size:15
+    Label:
+        text:""
+        id:item1
+        pos_hint:{'center_x':0.1,'center_y':0.25}
+    Label:
+        text:""
+        id:item2
+        pos_hint:{'center_x':0.1,'center_y':0.2}
+    Label:
+        text:""
+        id:item3
+        pos_hint:{'center_x':0.1,'center_y':0.15}
+    Label:
+        text:""
+        id:item4
+        pos_hint:{'center_x':0.1,'center_y':0.1}
+    Label:
+        text:"PRICE:"
+        pos_hint:{'center_x':0.4,'center_y':0.3}
+        bold:True
+        font_size:15
+    Label:
+        text:""
+        id:price1
+        pos_hint:{'center_x':0.4,'center_y':0.25}
+    Label:
+        text:""
+        id:price2
+        pos_hint:{'center_x':0.4,'center_y':0.2}
+    Label:
+        text:""
+        id:price3
+        pos_hint:{'center_x':0.4,'center_y':0.15}
+    Label:
+        text:""
+        id:price4
+        pos_hint:{'center_x':0.4,'center_y':0.1}
+    Label:
+        text:"QUANTITY:"
+        pos_hint:{'center_x':0.7,'center_y':0.3}
+        bold:True
+        font_size:17
+    Label:
+        text:""
+        id:quantity1
+        pos_hint:{'center_x':0.7,'center_y':0.25}
+    Label:
+        text:""
+        id:quantity2
+        pos_hint:{'center_x':0.7,'center_y':0.2}
+    Label:
+        text:""
+        id:quantity3
+        pos_hint:{'center_x':0.7,'center_y':0.15}
+    Label:
+        text:""
+        id:quantity4
+        pos_hint:{'center_x':0.7,'center_y':0.1}
+
+<NinthWindow>
+    name:"ninth"
+    Button:
+        text:"Search"
+        pos_hint:{'center_x':0.9,'center_y':0.6}
+        size_hint:(0.15,0.05)
+        background_normal:''
+        background_color:(1,1,1,0.8)
+        color:(1/255.0,40/255.0,40/255.0,1)
+        on_press:root.view_order()
+    Label:
+        id:display1
+        text:""
+        pos_hint:{'center_x':0.4,'center_y':0.15}
+        bold:True
+        font_size:18
+    Label:
+        text:"Enter Counter No:"
+        bold:True
+        color:(1,1,1,1)
+        font_size:20
+        pos_hint:{'center_x':0.25,'center_y':0.6}
+    TextInput:
+        id:c_no
+        multiline:False
+        size_hint:(0.3,0.05)
+        pos_hint:{'center_x':0.65,'center_y':0.6}
+
+
+
+
+
+
+
+
+

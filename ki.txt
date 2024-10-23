@@ -1,0 +1,8 @@
+choice={'IDlI':'pictures/Idli.jpg','PURI':'pictures/Puri.jpg','UPMA':'pictures/Upma.jpg','PAROTTA':'pictures/Parotta.jpg',"DOUGHN":'pictures/Doughnut Stick.jpg',"CONGEE":'pictures/Congee.jpg','BAOBUN':'pictures/Steamed Bao Bun.jpg','JIANBI':'pictures/Jian Bing.jpg',"HUEVOS":'pictures/Huevos rancheros.jpg',"ENCHILA":'pictures/Enchiladas enmoladas.jpg',"TAMALES":'pictures/Tamales.jpg',"MOLLETE":'pictures/Molletes.jpg'}
+        key=random.choice(list(choice))
+        c2=choice[key]
+        print(c2)
+        c3=str(c2)
+        print(c3)
+        c5="Hello"
+        self.ids.quantity4.text = c5
