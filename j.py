@@ -175,7 +175,7 @@ class SixthWindow(Screen):
         mydb = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="9686715002",
+            password="#",
             database="athithya")
         cur = mydb.cursor()
         cur.execute(
